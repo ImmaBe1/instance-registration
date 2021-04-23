@@ -1,10 +1,12 @@
+## instance-registration
 
-sudo docker service rm $(sudo docker service ls --format '{{.ID}}'); sudo docker stop $(sudo docker ps -a -q); sudo docker system prune -a --volumes
-sudo docker build --tag immabe .
-sudo docker run --publish 5000:5000 immabe
+Registration workflow of any edtech open-source tool developed by ImmaBe and its community.
 
+Run the workdlow: `bash setup.sh`
 
-ssh to the running container:
-sudo docker ps
-sudo docker exec -it <container_id> bash
-crontab -l
+- EdTech Tool : http://127.0.0.1:5001
+- Registration Manager: http://127.0.0.1:5002
+- Registration Database: 172.27.1.7:3306
+- Adminer (Management portal for the Registration Database): http://127.0.0.1:8080
+
+At the end of the orchestration, test the workflow by following the steps in its [diagram](_flow_diagram/flow.pptx).
